@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { onMount } from "svelte";
+
 	import DayList from "../Components/DayList.svelte";
 	import { getWeekByMonth } from "../Utils/week";
 
@@ -14,6 +16,10 @@
 			months.reverse();
 		}
 	}
+
+	onMount(() => {
+		document.title = `Week ${weekNumber} of ${year}`;
+	});
 </script>
 
 <style>
