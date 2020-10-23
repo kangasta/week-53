@@ -3,7 +3,7 @@
 	import Default from "./Routes/Default.svelte";
 	import Week from "./Routes/Week.svelte";
 
-	export let basepath = "/";
+	export let basepath = process.env.PUBLIC_URL;
 </script>
 
 <style>

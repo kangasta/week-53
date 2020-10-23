@@ -5,8 +5,13 @@ import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import sveltePreprocess from 'svelte-preprocess';
 import typescript from '@rollup/plugin-typescript';
+import {config} from 'dotenv';
+import replace from '@rollup/plugin-replace';
+import copy from 'rollup-plugin-copy'
 
 const production = !process.env.ROLLUP_WATCH;
+const env = config().parsed;
+const public_url = env.PUBLIC_URL
 
 function serve() {
 	let server;
@@ -38,6 +43,23 @@ export default {
 		file: 'public/build/bundle.js'
 	},
 	plugins: [
+		copy({
+			targets: [
+				{
+					src: 'src/index.html',
+					dest: 'public/',
+					transform: (contents) => contents.toString().replace(/__PUBLIC_URL__/g, (public_url || ''))
+				},
+			],
+		}),
+		replace({
+			process: JSON.stringify({
+				env: {
+					isProd: production,
+					...env
+				}
+			}),
+		}),
 		svelte({
 			// enable run-time checks when not in production
 			dev: !production,
