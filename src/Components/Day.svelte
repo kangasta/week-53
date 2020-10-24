@@ -37,13 +37,10 @@
 		font-size: 1rem;
 		line-height: normal;
 		margin: 0 0.5em;
-		padding: 0 0.5em;
+		padding: 0.125rem 0.5em;
 		text-align: center;
 
 		border-radius: 0.75rem;
-		vertical-align: text-bottom;
-		height: 1.5rem;
-		/* width: 1.5rem; */
 	}
 </style>
 
