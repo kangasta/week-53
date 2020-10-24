@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Router, Route } from "svelte-routing";
+	import Footer from "./Components/Footer.svelte";
 	import Default from "./Routes/Default.svelte";
 	import Week from "./Routes/Week.svelte";
 	import { getBaseUrl } from './Utils/navigate';
@@ -9,6 +10,7 @@
 
 <style>
 	main {
+		flex: 1;
 		margin: 0 auto;
 		max-width: 90%;
 		width: 960px;
@@ -21,3 +23,4 @@
 		<Route component={Default} />
 	</Router>
 </main>
+<Footer />

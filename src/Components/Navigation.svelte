@@ -14,22 +14,10 @@
 
 <style>
 	a.nav {
-		color: var(--text-blue);
 		line-height: 2.5rem;
 		margin-right: 1rem;
-		text-decoration: none;
-	}
-
-	a.nav:visited {
-		color: var(--text-blue);
-	}
-
-	a.nav:hover, a.nav:focus {
-		outline: none;
-		text-decoration: underline;
 	}
 </style>
-
 
 {#each links as l}
 	<a class="nav" href={l.target} use:link>{l.name}</a>
