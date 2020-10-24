@@ -1,14 +1,17 @@
 import { navigate as sr_navigate } from 'svelte-routing';
 import { getWeek, getWeekNumber, getWeekYear, WEEK_IN_MS } from './week';
 
-export const getBaseUrl = () => {
+export const getFromEnv = (key: string): string => {
 	try {
 		// @ts-ignore
-		return process.env.PUBLIC_URL || '';
+		const value = process.env[key] ?? ''
+		return String(value);
 	} catch(_) {
 		return ''
 	}
-};
+}
+
+export const getBaseUrl = () => getFromEnv('PUBLIC_URL');
 
 export const withBaseUrl = (target: string) => {
 	const prefix = target.startsWith('/') ? getBaseUrl() : '';
