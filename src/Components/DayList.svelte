@@ -24,7 +24,7 @@
 
 <h3>{getMonthName(monthIndex)}</h3>
 <ul class="day-list">
-	{#each days as day}
+	{#each days as day (day.getTime())}
 		<Day day={day} />
 	{/each}
 </ul>

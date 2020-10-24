@@ -3,9 +3,9 @@
 
 	export let day: Date;
 
-	const date = day.getDate();
-	const weekday = getWeekdayName((day.getDay() + 6));
-	const sunday = day.getDay() === 0;
+	$: date = day.getDate();
+	$: weekday = getWeekdayName((day.getDay() + 6));
+	$: sunday = day.getDay() === 0;
 </script>
 
 <style>

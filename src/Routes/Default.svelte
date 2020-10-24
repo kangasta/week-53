@@ -1,14 +1,13 @@
-
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { navigate } from 'svelte-routing';
+	import { navigate } from '../Utils/navigate';
 	import { getWeekNumber, getWeekYear } from '../Utils/week';
 
 	const currentWeek = getWeekNumber();
 	const currentYear = getWeekYear();
 
 	onMount(() => {
-		navigate(`${process.env.PUBLIC_URL || ''}/${currentYear}/${currentWeek}`, {replace: true});
+		navigate(`/${currentYear}/${currentWeek}`, {replace: true});
 	});
 </script>
 

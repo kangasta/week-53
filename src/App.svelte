@@ -2,8 +2,9 @@
 	import { Router, Route } from "svelte-routing";
 	import Default from "./Routes/Default.svelte";
 	import Week from "./Routes/Week.svelte";
+	import { getBaseUrl } from './Utils/navigate';
 
-	export let basepath = process.env.PUBLIC_URL || '';
+	export let basepath = getBaseUrl();
 </script>
 
 <style>
