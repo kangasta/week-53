@@ -1,14 +1,17 @@
 <script lang="ts">
 	import { link } from "svelte-routing";
-	import { getNextWeekRoute, getPreviousWeekRoute, withBaseUrl } from "../Utils/navigate";
+	import { getWeekRoute, getYearRoute, withBaseUrl } from "../Utils/navigate";
 
-	export let year;
-	export let weekNumber;
+	export let year: number;
+	export let weekNumber: number | null = null;
+
+	const getNeighbour = weekNumber !== null ? getWeekRoute : (year: number, _: number, i: number) => getYearRoute(year, i);
 
 	$: links = [
-		{name: 'Previous', target: withBaseUrl(getPreviousWeekRoute(year, weekNumber)), },
-		{name: 'Next', target: withBaseUrl(getNextWeekRoute(year, weekNumber)), },
-		{name: 'Current week', target: withBaseUrl('/')}
+		{name: 'Previous', target: withBaseUrl(getNeighbour(year, weekNumber, -1)), },
+		{name: 'Next', target: withBaseUrl(getNeighbour(year, weekNumber, 1)), },
+		{name: 'Current week', target: withBaseUrl('/')},
+		...(weekNumber !== null ? [{name: 'Year', target: withBaseUrl(getYearRoute(year))}] : []),
 	];
 </script>
 

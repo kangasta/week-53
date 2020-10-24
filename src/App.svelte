@@ -3,6 +3,7 @@
 	import Footer from "./Components/Footer.svelte";
 	import Default from "./Routes/Default.svelte";
 	import Week from "./Routes/Week.svelte";
+	import Year from "./Routes/Year.svelte";
 	import { getBaseUrl } from './Utils/navigate';
 
 	export let basepath = getBaseUrl();
@@ -20,6 +21,7 @@
 <main>
 	<Router basepath={basepath}>
 		<Route path=":year/:weekNumber" component={Week} />
+		<Route path=":year" component={Year} />
 		<Route component={Default} />
 	</Router>
 </main>
