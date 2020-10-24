@@ -7,7 +7,7 @@ addons:
 
 script:
 # - npm run lint
-# - npm test -- --coverage --verbose
+- npm test -- --coverage --verbose
 - echo 'PUBLIC_URL="/week-53"' > .env
 - echo "COMMIT=\"${TRAVIS_COMMIT}\"" >> .env
 - echo "TAG=\"${TRAVIS_TAG}\"" >> .env
