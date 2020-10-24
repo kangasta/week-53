@@ -54,3 +54,8 @@ export const getWeekYear = (dateIn?: Date): number => {
 
 	return date.getFullYear();
 }
+
+export const isToday = (date: Date): boolean => {
+	const today = new Date();
+	return ['getDate', 'getMonth', 'getFullYear'].every(fnName => today[fnName]() === date[fnName]());
+}

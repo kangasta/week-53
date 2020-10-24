@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { getWeekdayName } from "../Utils/names";
+	import { isToday } from "../Utils/week";
 
 	export let day: Date;
 
@@ -28,8 +29,27 @@
 		line-height: 2.5rem;
 		list-style: none;
 	}
+
+	span.today {
+		background: var(--text-blue);
+		color: var(--background);
+		display: inline-block;
+		font-size: 1rem;
+		line-height: normal;
+		margin: 0 0.5em;
+		padding: 0 0.5em;
+		text-align: center;
+
+		border-radius: 0.75rem;
+		vertical-align: text-bottom;
+		height: 1.5rem;
+		/* width: 1.5rem; */
+	}
 </style>
 
 <li>
 	<b class:sunday>{date}</b> {weekday}
+	{#if isToday(day)}
+		<span class="today">Today</span>
+	{/if}
 </li>
