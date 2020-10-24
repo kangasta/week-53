@@ -3,7 +3,7 @@
 	import Default from "./Routes/Default.svelte";
 	import Week from "./Routes/Week.svelte";
 
-	export let basepath = process.env.PUBLIC_URL;
+	export let basepath = process.env.PUBLIC_URL || '';
 </script>
 
 <style>
@@ -15,8 +15,8 @@
 </style>
 
 <main>
-	<Router basepath="{basepath}">
-		<Route path=":year/:weekNumber" component="{Week}" />
-		<Route component="{Default}" />
+	<Router basepath={basepath}>
+		<Route path=":year/:weekNumber" component={Week} />
+		<Route component={Default} />
 	</Router>
 </main>

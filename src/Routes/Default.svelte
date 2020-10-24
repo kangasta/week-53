@@ -8,7 +8,7 @@
 	const currentYear = getWeekYear();
 
 	onMount(() => {
-		navigate(`/${currentYear}/${currentWeek}`, {replace: true});
+		navigate(`${process.env.PUBLIC_URL || ''}/${currentYear}/${currentWeek}`, {replace: true});
 	});
 </script>
 
