@@ -1,5 +1,5 @@
-const DAY_IN_MS = 24 * 3600 * 1000;
-const WEEK_IN_MS = 7 * DAY_IN_MS;
+export const DAY_IN_MS = 24 * 3600 * 1000;
+export const WEEK_IN_MS = 7 * DAY_IN_MS;
 
 const getWeekMonday = (date: Date): Date => new Date(date.getFullYear(), date.getMonth(), date.getDate() - (date.getDay() + 6) % 7)
 const getWeekThursdayDate = (date: Date): number => date.getDate() + 3 - (date.getDay() + 6) % 7;

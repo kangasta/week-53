@@ -1,10 +1,15 @@
+:root {
+	--text-red: #c66;
+	--text-green: #6c6;
+	--text-blue: #66c;
+}
+
 @media (prefers-color-scheme: light) {
 	:root {
 		--background: #333;
 		--text-secondary: #666;
 		--text-primary: #ddd;
 		--text-grey: #999;
-		--text-red: #c66;
 	}
 }
 
@@ -14,7 +19,6 @@
 		--text-secondary: #999;
 		--text-primary: #333;
 		--text-grey: #666;
-		--text-red: #c66;
 	}
 }
 
