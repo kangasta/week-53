@@ -36,6 +36,8 @@ export const getWeekByMonth = (year: number, weekNumber: number): WeekByMonth =>
 	return weekByMonth;
 }
 
+export const getWeeksInYear = (year: number): number => getWeekNumber(new Date(year, 11, 28));
+
 // Source: https://weeknumber.net/how-to/javascript
 export const getWeekNumber = (dateIn?: Date): number => {
 	const date = dateIn ? new Date(dateIn) : new Date();

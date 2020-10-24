@@ -3,6 +3,8 @@
 	import { navigate } from '../Utils/navigate';
 	import { getWeekNumber, getWeekYear } from '../Utils/week';
 
+	export const location = null;
+
 	const currentWeek = getWeekNumber();
 	const currentYear = getWeekYear();
 

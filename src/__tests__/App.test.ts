@@ -53,3 +53,15 @@ test('App provides links to navigate between weeks', async (): Promise<void> => 
 	await fireEvent.click(await findByText('Current week'));
 	await checkDateVisible(date, findByText);
 });
+
+test('App provides full year view', async (): Promise<void> => {
+	const { findAllByText, findByText } = render(App);
+
+	await fireEvent.click(await findByText('Current week'));
+	let weeks = await findAllByText(/Week [0-9]+/);
+	expect(weeks.length).toBeLessThan(52);
+
+	await fireEvent.click(await findByText('Year'));
+	weeks = await findAllByText(/Week [0-9]+/);
+	expect(weeks.length).toBeGreaterThanOrEqual(52);
+});

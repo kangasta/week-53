@@ -20,12 +20,11 @@ export const withBaseUrl = (target: string) => {
 
 export const navigate = (target: string, options: {replace?: boolean, state?: object}): void => sr_navigate(withBaseUrl(target), options);
 
-const getRelativeWeekRoute = (year: number, weekNumber: number, i: number): string => {
+export const getWeekRoute = (year: number, weekNumber: number, i: number): string => {
 	const thursday = getWeek(year, weekNumber)[3];
 	const relatedThursday = new Date(thursday.getTime() + i * WEEK_IN_MS);
 
 	return `/${getWeekYear(relatedThursday)}/${getWeekNumber(relatedThursday)}`;
 }
 
-export const getPreviousWeekRoute = (year: number, weekNumber: number): string => getRelativeWeekRoute(year, weekNumber, -1);
-export const getNextWeekRoute = (year: number, weekNumber: number): string => getRelativeWeekRoute(year, weekNumber, 1);
+export const getYearRoute = (year: number, i=0): string => `/${year + i}`;
