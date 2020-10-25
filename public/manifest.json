@@ -3,6 +3,7 @@
   "short_name": "Week 53",
   "description": "Simple week calendar.",
   "display": "standalone",
+  "start_url": "./",
   "icons": [
     {
       "src": "logo-128.png",
