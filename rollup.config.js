@@ -67,7 +67,7 @@ export default {
 				"**/*.{css,js,png,html,json}"
 			],
 			swDest: "public/sw.js",
-			navigateFallback: "/index.html"
+			navigateFallback: `${public_url}/index.html`,
 		}),
 		svelte({
 			// enable run-time checks when not in production
