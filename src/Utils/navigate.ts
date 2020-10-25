@@ -14,7 +14,7 @@ export const getFromEnv = (key: string): string => {
 const withoutTrailingSlash = (path: string) => path.endsWith('/') ? path.slice(0, -1) : path;
 
 export const getBasePath = () => {
-	const public_url = getFromEnv('PUBLIC_URL')
+	const public_url = getFromEnv('PUBLIC_URL');
 	const urlMatch = public_url.match(/\:\/\/[^/]+(.*)/);
 
 	if (!urlMatch) {
