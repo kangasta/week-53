@@ -8,6 +8,7 @@ import typescript from '@rollup/plugin-typescript';
 import {config} from 'dotenv';
 import replace from '@rollup/plugin-replace';
 import copy from 'rollup-plugin-copy'
+import { generateSW } from 'rollup-plugin-workbox';
 
 const production = !process.env.ROLLUP_WATCH;
 const env = config().parsed;
@@ -60,6 +61,14 @@ export default {
 				}
 			}),
 		}),
+		generateSW({
+			globDirectory: "public/",
+			globPatterns: [
+				"**/*.{css,js,png,html,json}"
+			],
+			swDest: "public/sw.js",
+			navigateFallback: "/index.html"
+		}),
 		svelte({
 			// enable run-time checks when not in production
 			dev: !production,
@@ -70,7 +79,6 @@ export default {
 			},
 			preprocess: sveltePreprocess(),
 		}),
-
 		// If you have external dependencies installed from
 		// npm, you'll most likely need these plugins. In
 		// some cases you'll need additional configuration -
