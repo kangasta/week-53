@@ -8,7 +8,7 @@ addons:
 script:
 # - npm run lint
 - npm test -- --coverage --verbose
-- echo 'PUBLIC_URL="/week-53"' > .env
+- echo 'PUBLIC_URL="https://kangasta.github.io/week-53"' > .env
 - echo "COMMIT=\"${TRAVIS_COMMIT}\"" >> .env
 - echo "TAG=\"${TRAVIS_TAG}\"" >> .env
 - npm run build
