@@ -4,9 +4,9 @@
 	import Default from "./Routes/Default.svelte";
 	import Week from "./Routes/Week.svelte";
 	import Year from "./Routes/Year.svelte";
-	import { getBaseUrl } from './Utils/navigate';
+	import { getBasePath } from './Utils/navigate';
 
-	export let basepath = getBaseUrl();
+	export let basepath = getBasePath();
 </script>
 
 <style>

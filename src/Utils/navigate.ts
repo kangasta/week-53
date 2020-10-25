@@ -11,14 +11,25 @@ export const getFromEnv = (key: string): string => {
 	}
 }
 
-export const getBaseUrl = () => getFromEnv('PUBLIC_URL');
+const withoutTrailingSlash = (path: string) => path.endsWith('/') ? path.slice(0, -1) : path;
 
-export const withBaseUrl = (target: string) => {
-	const prefix = target.startsWith('/') ? getBaseUrl() : '';
+export const getBasePath = () => {
+	const public_url = getFromEnv('PUBLIC_URL')
+	const urlMatch = public_url.match(/\:\/\/[^/]+(.*)/);
+
+	if (!urlMatch) {
+		return withoutTrailingSlash(public_url);
+	}
+
+	return withoutTrailingSlash(urlMatch[1]);
+};
+
+export const withBasePath = (target: string) => {
+	const prefix = target.startsWith('/') ? getBasePath() : '';
 	return `${prefix}${target}`;
 }
 
-export const navigate = (target: string, options: {replace?: boolean, state?: object}): void => sr_navigate(withBaseUrl(target), options);
+export const navigate = (target: string, options: {replace?: boolean, state?: object}): void => sr_navigate(withBasePath(target), options);
 
 export const getWeekRoute = (year: number, weekNumber: number, i: number): string => {
 	const thursday = getWeek(year, weekNumber)[3];
