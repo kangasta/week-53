@@ -1,12 +1,11 @@
-:root {
-	--text-red: #c66;
-	--text-green: #6c6;
-	--text-blue: #66c;
-}
-
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
 	:root {
-		--background: #333;
+		--text-red: #b66;
+		--text-green: #6b6;
+		--text-blue: #77c;
+
+		--background: #222226;
+		--background-highlight: #333338;
 		--text-secondary: #666;
 		--text-primary: #ddd;
 		--text-grey: #999;
@@ -15,7 +14,12 @@
 
 @media (prefers-color-scheme: light) {
 	:root {
+		--text-red: #b55;
+		--text-green: #393;
+		--text-blue: #66b;
+
 		--background: #fff;
+		--background-highlight: #eee;
 		--text-secondary: #999;
 		--text-primary: #333;
 		--text-grey: #666;
