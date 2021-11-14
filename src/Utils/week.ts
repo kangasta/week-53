@@ -18,6 +18,14 @@ export const getWeek = (year: number, weekNumber: number): Date[] => {
 	return [...Array(7)].map((_, i): Date => new Date(monday.getTime() + i * DAY_IN_MS));
 }
 
+export const validateWeekNumber = (year: number, weekNumber: number): {year: number, weekNumber: number} => {
+	const dates = getWeek(year, weekNumber);
+	return {
+		year: getWeekYear(dates[0]),
+		weekNumber: getWeekNumber(dates[0]),
+	}
+}
+
 export type WeekByMonth = {[key: number]: Date[]};
 export const getWeekByMonth = (year: number, weekNumber: number): WeekByMonth => {
 	const week = getWeek(year, weekNumber);

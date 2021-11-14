@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Navigation from "../Components/Navigation.svelte";
-	import Week from "../Routes/Week.svelte";
+	import Week from "../Components/Week.svelte";
 	import { getWeeksInYear } from "../Utils/week";
 
 	export let year: string;
@@ -14,6 +14,6 @@
 
 <h1>{year}</h1>
 {#each weekNumbers as weekNumber (`${year}-W${weekNumber}`)}
-	<Week {year} weekNumber={String(weekNumber)} disableNavigation/>
+	<Week year={Number(year)} weekNumber={weekNumber} hideYear forceBottomWhitespace />
 {/each}
 <Navigation year={Number(year)} />
