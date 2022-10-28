@@ -21,7 +21,19 @@ npm run dev
 
 ### Before committing
 
-The code is unit tested with:
+Lint code by running `npm run lint`.
+
+```sh
+npm run build
+```
+
+Automatically format code by running `npm run format`.
+
+```sh
+npm run format
+```
+
+Unit-test the code with `npm test`.
 
 ```bash
 # Unit test
@@ -31,7 +43,7 @@ npm test -- --coverage
 # to also get coverage analysis
 ```
 
-To create production build:
+Create production build by running `npm run build`.
 
 ```bash
 # Build
