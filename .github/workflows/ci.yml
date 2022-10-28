@@ -19,4 +19,8 @@ jobs:
       run: npm ci
     - name: Run static analysis and unittests
       run: |
+        npm run lint
         npm test -- --coverage --verbose
+    - name: Build production bundle
+      run: |
+        npm run build
