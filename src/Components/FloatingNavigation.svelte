@@ -1,5 +1,6 @@
 <script lang="ts">
   import { getWeekNumber, getWeekYear } from "../Utils/week";
+  import ToEndArrow from "./ToEndArrow.svelte";
 
   export let yearRect: DOMRect;
   export let currentWeekRect: DOMRect;
@@ -24,7 +25,9 @@
 
 <div class="floating-area top">
   {#if showYearTop}
-    <button aria-label="Scroll to top" on:click={scrollToTop}>&uarr;</button>
+    <button aria-label="Scroll to top" on:click={scrollToTop}
+      ><ToEndArrow direction="top" /></button
+    >
   {/if}
   {#if showWeekTop}
     <button aria-label="Scroll to current week" on:click={scrollToCurrentWeek}
@@ -41,7 +44,7 @@
   {/if}
   {#if showYearBottom}
     <button aria-label="Scroll to bottom" on:click={scrollToBottom}
-      >&darr;</button
+      ><ToEndArrow direction="bottom" /></button
     >
   {/if}
 </div>
