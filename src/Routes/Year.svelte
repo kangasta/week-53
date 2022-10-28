@@ -21,7 +21,6 @@
 	let currentWeekRect: DOMRect
 
 	const updateRects = () => {
-		console.log('scroll')
 		yearRect = document.getElementById(`year-${year}`)?.getBoundingClientRect()
 		currentWeekRect = document.getElementById(currentWeekId)?.getBoundingClientRect()
 	}
