@@ -6,10 +6,6 @@
 </script>
 
 <style>
-	a, span {
-		margin-right: 0.5rem;
-	}
-
 	footer {
 		padding: 2rem 0 1rem 0;
 		text-align: center;
@@ -18,9 +14,9 @@
 
 <footer>
 	<a href="https://github.com/kangasta/week-53.git" target="_blank">
-		Source code
+		kangasta / week-53
 	</a>
 	{#if commit || tag}
-		<span>Version: {tag} {commit}</span>
+		<span>at {tag} {commit}</span>
 	{/if}
 </footer>
