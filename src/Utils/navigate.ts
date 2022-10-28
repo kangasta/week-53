@@ -4,7 +4,8 @@ import { getWeek, getWeekNumber, getWeekYear, WEEK_IN_MS } from './week';
 export const getFromEnv = (key: string): string => {
 	try {
 		// @ts-ignore
-		const value = process.env[key] ?? ''
+		const { env } = process ?? {};
+		const value = env[key] ?? ''
 		return String(value);
 	} catch(_) {
 		return ''

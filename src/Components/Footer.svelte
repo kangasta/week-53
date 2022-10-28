@@ -13,7 +13,7 @@
 </style>
 
 <footer>
-	<a href="https://github.com/kangasta/week-53.git" target="_blank">
+	<a href="https://github.com/kangasta/week-53.git" rel="noreferrer" target="_blank">
 		kangasta / week-53
 	</a>
 	{#if commit || tag}
