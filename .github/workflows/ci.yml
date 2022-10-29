@@ -21,6 +21,9 @@ jobs:
       run: |
         npm run lint
         npm test -- --coverage --verbose
+    - uses: paambaati/codeclimate-action@v3.2.0
+      env:
+        CC_TEST_REPORTER_ID: ${{ secrets.CODECLIMATE_TOKEN }}
     - name: Build production bundle
       run: |
         npm run build
